@@ -107,6 +107,7 @@ T = {
    "Jestem radcą prawnym prowadzącym własną praktykę. Klient pracuje bezpośrednio ze mną, bez pośredników, a ja odpowiadam za całość zlecenia.",
    "Doświadczenie zdobywałem w działach prawnych firm z branży intralogistyki i wózków widłowych ({employers}) oraz w sieci handlowej Kaufland, gdzie pracowałem jako prawnik i compliance officer.",
    "Brałem udział w negocjacjach z międzynarodowymi dostawcami z sektora automotive. Znam typowe punkty sporne w umowach zakupowych i wiem, jak rozmawiać o nich zarówno z perspektywy dostawcy, jak i producenta.",
+   "Studiowałem w Niemczech i posługuję się językiem niemieckim na poziomie zawodowym. Doradzałem także firmom z Francji i Włoch.",
    "Praca radcy prawnego w firmie wiązała się z szacowaniem ryzyka. Staram się nie blokować biznesu, tylko go wspierać w granicach prawa: odpowiadam terminowo i możliwie szybko, a rozwiązania opieram na możliwych i potencjalnych ryzykach, także prawnych.",
   ],
   "about_p2_noemp": "Doświadczenie zdobywałem w działach prawnych firm z branży intralogistyki i wózków widłowych oraz w sieci handlowej, gdzie pracowałem jako prawnik i compliance officer.",
@@ -118,7 +119,7 @@ T = {
    "Compliance w sieci handlowej — jako prawnik i compliance officer",
    "Spółki: zakładanie od podstaw i rejestracje w KRS przez Portal Rejestrów Sądowych (PRS)",
    "Obsługa korporacyjna: powoływanie i odwoływanie członków zarządu i prokurentów, absolutorium, zatwierdzanie sprawozdań finansowych, dokumenty na walne zgromadzenia",
-   "Praca w języku polskim, angielskim i niemieckim",
+   "Studia w Niemczech; praca w języku polskim, angielskim i niemieckim",
   ],
   "quals_h": "Uprawnienia zawodowe",
   "quals": [
@@ -185,6 +186,7 @@ T = {
    "I am an attorney-at-law (radca prawny) admitted in Poland and I run my own practice. Clients work directly with me, without intermediaries, and I am responsible for the matter from start to finish.",
    "I gained my experience in the legal departments of companies in the intralogistics and forklift industry ({employers}) and at the retail chain Kaufland, where I worked as a lawyer and compliance officer.",
    "I have taken part in negotiations with international suppliers in the automotive sector. I know the typical points of contention in procurement contracts and how to address them from the perspective of both supplier and manufacturer.",
+   "I studied in Germany and work in German at a professional level. I have also advised companies from France and Italy.",
    "In-house legal work meant assessing risk. I try not to block the business but to support it within the limits of the law: I reply on time and as quickly as I can, and I base solutions on possible and potential risks, including legal ones.",
   ],
   "about_p2_noemp": "I gained my experience in the legal departments of companies in the intralogistics and forklift industry and at a retail chain, where I worked as a lawyer and compliance officer.",
@@ -196,7 +198,7 @@ T = {
    "Compliance in retail — as a lawyer and compliance officer",
    "Companies: incorporation from scratch and registrations with the National Court Register (KRS) through the Court Registers Portal (PRS)",
    "Corporate support: appointing and removing board members and commercial proxies (prokura), discharge, approval of financial statements, documents for general meetings",
-   "Working language: Polish, English and German",
+   "Studied in Germany; working languages: Polish, English and German",
   ],
   "quals_h": "Professional qualification",
   "quals": [
@@ -263,6 +265,7 @@ T = {
    "Ich bin in Polen zugelassener Rechtsanwalt (radca prawny) und führe eine eigene Praxis. Mandanten arbeiten direkt mit mir, ohne Zwischenstationen, und ich verantworte das Mandat von Anfang bis Ende.",
    "Meine Erfahrung habe ich in den Rechtsabteilungen von Unternehmen der Intralogistik- und Gabelstaplerbranche ({employers}) sowie bei der Handelskette Kaufland gesammelt, wo ich als Jurist und Compliance Officer tätig war.",
    "Ich habe an Verhandlungen mit internationalen Lieferanten der Automobilbranche teilgenommen. Ich kenne die typischen Streitpunkte in Einkaufsverträgen und weiß, wie man sie aus der Sicht von Lieferant und Hersteller anspricht.",
+   "Ich habe in Deutschland studiert und arbeite auf professionellem Niveau auf Deutsch. Außerdem habe ich Unternehmen aus Frankreich und Italien beraten.",
    "Die Tätigkeit als Unternehmensjurist war mit der Bewertung von Risiken verbunden. Ich blockiere das Geschäft nicht, sondern unterstütze es im rechtlichen Rahmen: Ich antworte termingerecht und so schnell wie möglich und bewerte Lösungen anhand möglicher und potenzieller Risiken, auch rechtlicher.",
   ],
   "about_p2_noemp": "Meine Erfahrung habe ich in den Rechtsabteilungen von Unternehmen der Intralogistik- und Gabelstaplerbranche sowie bei einer Handelskette gesammelt, wo ich als Jurist und Compliance Officer tätig war.",
@@ -274,7 +277,7 @@ T = {
    "Compliance im Handel — als Jurist und Compliance Officer",
    "Gesellschaften: Gründung von Grund auf und Anmeldungen zum polnischen Gerichtsregister (KRS) über das Gerichtsregisterportal (PRS)",
    "Gesellschaftsrechtliche Betreuung: Bestellung und Abberufung von Vorstands-/Geschäftsführungsmitgliedern und Prokuristen, Entlastung, Genehmigung der Jahresabschlüsse, Unterlagen für Hauptversammlungen",
-   "Arbeitssprachen: Polnisch, Englisch und Deutsch",
+   "Studium in Deutschland; Arbeitssprachen: Polnisch, Englisch und Deutsch",
   ],
   "quals_h": "Berufliche Qualifikation",
   "quals": [
@@ -483,7 +486,10 @@ def head(lang, page, title, description):
 <meta property="og:locale" content="{og_locale}">
 <meta property="og:image" content="{BASE}/assets/img/og.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/img/icon-192.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
 <link rel="stylesheet" href="../assets/css/style.css">
 """
 
@@ -697,7 +703,10 @@ ROOT_PAGE = f"""<!doctype html>
 <link rel="alternate" hreflang="de" href="{BASE}/de/">
 <link rel="alternate" hreflang="x-default" href="{BASE}/">
 <meta name="theme-color" content="#0e1a2b">
-<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/img/icon-192.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
 <link rel="stylesheet" href="assets/css/style.css">
 <style>
  body{{background:#0e1a2b;color:#fff;min-height:100vh;display:grid;place-items:center;text-align:center}}
@@ -736,7 +745,10 @@ NOT_FOUND = f"""<!doctype html>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
 <title>404 — Dymczak Legal</title>
+<link rel="icon" href="/favicon.ico" sizes="48x48">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/img/icon-192.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
 <link rel="stylesheet" href="/assets/css/style.css">
 <style>
  body{{background:#0e1a2b;color:#fff;min-height:100vh;display:grid;place-items:center;text-align:center}}
@@ -789,7 +801,7 @@ def main():
     write("robots.txt", f"User-agent: *\nAllow: /\n\nSitemap: {BASE}/sitemap.xml\n")
     write("CNAME", CONFIG["domain"] + "\n")
     write(".nojekyll", "")
-    write("favicon.svg", FAVICON)
+    # favicon.svg / favicon.ico / icon-*.png are static files (DL monogram) — not generated here
     print("Built: pl/ en/ de/ index.html 404.html sitemap.xml robots.txt CNAME")
     if MISSING:
         print("\nTO FILL IN (CONFIG in build.py) — shown as yellow [...] on the legal-notice pages:")
