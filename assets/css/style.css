@@ -94,17 +94,17 @@ ul { margin: 0; padding: 0; list-style: none; }
 .service h3 { font-size: 1.45rem; margin-bottom: 12px; }
 .service p { color: var(--muted); font-size: 15.8px; margin: 0; }
 
-.pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(24px, 4vw, 56px); }
+.pillars { display: grid; grid-template-columns: repeat(4, 1fr); gap: clamp(22px, 3vw, 40px); }
 .pillar { padding-left: 22px; border-left: 2px solid var(--brass); }
-.pillar h3 { font-size: 1.4rem; margin-bottom: 10px; }
-.pillar p { color: var(--muted); margin: 0; font-size: 16px; }
+.pillar h3 { font-size: 1.3rem; margin-bottom: 10px; }
+.pillar p { color: var(--muted); margin: 0; font-size: 15.5px; }
 
 /* ---------- Photo band ---------- */
 .band { position: relative; min-height: clamp(380px, 52vw, 560px); display: grid; align-items: center; color: #fff; overflow: hidden; background: var(--navy); }
 .band__img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 55%; }
 .band::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(10, 20, 34, .78) 0%, rgba(10, 20, 34, .5) 45%, rgba(10, 20, 34, 0) 100%); }
 .band .wrap { position: relative; z-index: 2; padding-top: 56px; padding-bottom: 56px; }
-.band blockquote { margin: 0; max-width: 17em; font-family: var(--serif); font-style: italic; font-size: clamp(1.7rem, 3.4vw, 2.75rem); line-height: 1.22; }
+.band blockquote { margin: 0; max-width: 19em; font-family: var(--serif); font-style: italic; font-size: clamp(1.7rem, 3.4vw, 2.75rem); line-height: 1.22; }
 .band blockquote::before { content: ""; display: block; width: 56px; height: 2px; background: var(--brass); margin-bottom: 26px; }
 
 /* ---------- Industries ---------- */
@@ -168,7 +168,7 @@ mark.todo { background: #ffe9a8; color: #5b4300; padding: 0 5px; border-radius: 
 /* ---------- Responsive ---------- */
 @media (max-width: 960px) {
   .hero__grid, .about, .contact__grid, .section__head, .footer-grid { grid-template-columns: 1fr; }
-  .portrait { justify-self: start; max-width: 360px; }
+  .portrait { order: -1; justify-self: start; max-width: 300px; }
   .about__photo { position: static; max-width: 380px; }
   .services, .pillars, .industries { grid-template-columns: 1fr 1fr; }
   .footer-links { justify-content: flex-start; }
@@ -188,7 +188,12 @@ mark.todo { background: #ffe9a8; color: #5b4300; padding: 0 5px; border-radius: 
   .services, .pillars, .industries { grid-template-columns: 1fr; }
   .legal dl { grid-template-columns: 1fr; gap: 2px; }
   .legal dt { margin-top: 12px; }
-  .portrait__img::before { transform: translate(10px, 10px); }
+  .portrait { max-width: 250px; }
+  .hero .eyebrow { display: none; }
+  .portrait__img img { aspect-ratio: 1 / 1; object-position: 50% 14%; }
+  .portrait__img::before { transform: translate(9px, 9px); }
+  .portrait figcaption { margin-top: 22px; }
+  .hero { padding-top: 32px; }
   .brand__sub { font-size: 9.5px; letter-spacing: .09em; }
 }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
