@@ -59,3 +59,17 @@ Strona wyświetla adres z `CONFIG["email"]`. Jeśli chcesz używać adresu `@dym
     assets/                 css, js, czcionki, zdjęcia
     build.py                generator (edytuj teksty i CONFIG tutaj)
     CNAME, robots.txt, sitemap.xml, 404.html, favicon.svg
+
+## Dlaczego `www.dymczaklegal.com` może nie działać
+
+Rekordy A/AAAA dla `@` obsługują tylko adres bez `www`. Adres z `www` jest osobną nazwą w DNS i potrzebuje własnego rekordu:
+
+| Typ   | Nazwa | Wartość |
+|-------|-------|---------|
+| CNAME | `www` | `TWOJ-LOGIN.github.io` |
+
+- Jeśli u rejestratora istnieje już rekord `www` (A lub CNAME wskazujący na hosting/parking), usuń go. Dla jednej nazwy nie może być CNAME i innego rekordu jednocześnie.
+- Wartość to sama nazwa użytkownika na GitHubie + `.github.io`, bez nazwy repozytorium i bez `https://`.
+- Przy ustawionej domenie `dymczaklegal.com` w GitHub Pages GitHub sam przekieruje `www` na wersję bez `www`.
+- Po dodaniu rekordu poczekaj na propagację (zwykle do godziny, czasem do 24 h); certyfikat HTTPS dla `www` pojawia się dopiero po poprawnym sprawdzeniu DNS.
+- Sprawdzenie: `dig www.dymczaklegal.com +noall +answer` powinno pokazać CNAME na `TWOJ-LOGIN.github.io`.

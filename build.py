@@ -35,7 +35,12 @@ TODAY = datetime.date.today().isoformat()
 BASE = "https://" + CONFIG["domain"]
 LANGS = ["pl", "en", "de"]
 LEGAL_FILE = {"pl": "informacje-prawne.html", "en": "legal-notice.html", "de": "impressum.html"}
-SIGNATURE = "Polish Legal Counsel | Poland–Germany Business"
+SIG = {
+    "pl": "Radca prawny | Polska–Niemcy",
+    "en": "Polish Attorney-at-Law | Poland–Germany Business",
+    "de": "Rechtsanwalt in Polen (radca prawny) | Polen–Deutschland",
+}
+SIGNATURE = SIG["en"]   # used on the language-chooser page
 
 
 def e(s):
@@ -72,21 +77,22 @@ T = {
   "services_h": "Zakres usług",
   "services_p": "Doradzam firmom, które negocjują, kupują, sprzedają i dostarczają — tam, gdzie umowa musi wytrzymać próbę praktyki.",
   "services": [
-   ("Negocjacje handlowe", "Przygotowanie i prowadzenie negocjacji z dostawcami, odbiorcami i partnerami: strategia, pozycje kluczowe, ocena ryzyka i redakcja końcowego tekstu umowy — z perspektywy dostawcy i producenta."),
+   ("Negocjacje handlowe", "Przygotowanie i prowadzenie negocjacji z dostawcami, odbiorcami i partnerami: rozpoznanie, czego naprawdę chce druga strona, strategia, pozycje kluczowe, ocena ryzyka i redakcja końcowego tekstu umowy — z perspektywy dostawcy i producenta."),
    ("Umowy zakupowe i łańcuch dostaw", "Ogólne warunki zakupu, umowy ramowe i dostawcze, umowy jakościowe. Odpowiedzialność, gwarancje, kary umowne, limity odpowiedzialności, własność intelektualna i ciągłość dostaw."),
-   ("Dostawcy i sieci handlowe", "Warunki handlowe, rabaty i bonusy (w tym naliczane retroaktywnie), kary i potrącenia, przewaga kontraktowa w obrocie produktami rolnymi i spożywczymi oraz związane z tym spory."),
-   ("Compliance", "Polityki i kodeksy postępowania, procedury wewnętrzne, szkolenia, weryfikacja kontrahentów, systemy zgłaszania naruszeń (sygnaliści) oraz przeglądy zgodności."),
-   ("Prawo spółek", "Zakładanie i bieżąca obsługa spółek (w tym sp. z o.o.), umowy wspólników, uchwały, relacje zarząd–wspólnicy oraz wsparcie przy transakcjach."),
+   ("Dostawcy i sieci handlowe", "Warunki handlowe, rabaty i bonusy (w tym naliczane retroaktywnie), kary i potrącenia, przewaga kontraktowa w obrocie produktami rolnymi i spożywczymi oraz związane z tym spory, w tym sądowe."),
+   ("Compliance i łańcuch dostaw", "Polityki i kodeksy postępowania, procedury wewnętrzne, szkolenia, weryfikacja kontrahentów i systemy zgłaszania naruszeń (sygnaliści). Wdrażanie wymogów należytej staranności w łańcuchach dostaw, w tym niemieckiej ustawy LkSG — także dla polskich dostawców niemieckich firm."),
+   ("Prawo spółek", "Zakładanie spółek od podstaw, w tym zgłoszenia do KRS przez Portal Rejestrów Sądowych (PRS), oraz bieżąca obsługa korporacyjna: powoływanie i odwoływanie członków zarządu i prokurentów, uchwały, absolutorium, zatwierdzanie sprawozdań finansowych, dokumenty na walne zgromadzenia, umowy wspólników i wsparcie przy transakcjach."),
    ("Prawo cywilne i spory", "Roszczenia kontraktowe i odszkodowawcze, windykacja należności, negocjacje ugodowe oraz reprezentacja przed sądami i organami w Polsce."),
   ],
   "approach_h": "Podejście",
-  "approach_p": "Trzy rzeczy, które odróżniają moją pracę.",
+  "approach_p": "Cztery rzeczy, które odróżniają moją pracę.",
   "pillars": [
    ("Obie strony stołu", "Negocjowałem i oceniałem umowy z perspektywy dostawcy, producenta oraz sieci handlowej. Wiem, które postanowienia mają realne znaczenie dla każdej ze stron — i gdzie warto się zatrzymać."),
    ("Trzy języki, bez tłumacza", "Negocjacje, korespondencję i dokumentację prowadzę po polsku, angielsku i niemiecku. Umowa nie traci sensu na styku systemów prawnych i kultur biznesowych."),
-   ("Ryzyko w praktyce", "Wskazuję ryzyka, które mają znaczenie handlowe, i proponuję rozwiązania możliwe do przeprowadzenia przy stole negocjacyjnym — zamiast listy zastrzeżeń bez rekomendacji."),
+   ("Prawo, które wspiera biznes", "Szacuję ryzyka prawne razem z biznesowymi i proponuję rozwiązania możliwe do wdrożenia. Nie blokuję biznesu — pomagam działać w granicach prawa."),
+   ("Terminowość", "Dotrzymuję terminów i odpowiadam możliwie szybko, bo decyzje biznesowe rzadko mogą czekać."),
   ],
-  "band": "Dobra umowa działa także wtedy, gdy współpraca przestaje być prosta.",
+  "band": "W negocjacjach najpierw trzeba wiedzieć, czego naprawdę chce druga strona. Dopiero potem warto negocjować.",
   "band_alt": "Stylizowana grafika: panorama miasta o zmierzchu",
   "industries_h": "Branże",
   "industries_p": "Rynki, na których negocjacje są codziennością.",
@@ -101,13 +107,17 @@ T = {
    "Jestem radcą prawnym prowadzącym własną praktykę. Klient pracuje bezpośrednio ze mną, bez pośredników, a ja odpowiadam za całość zlecenia.",
    "Doświadczenie zdobywałem w działach prawnych firm z branży intralogistyki i wózków widłowych ({employers}) oraz w sieci handlowej Kaufland, gdzie pracowałem jako prawnik i compliance officer.",
    "Brałem udział w negocjacjach z międzynarodowymi dostawcami z sektora automotive. Znam typowe punkty sporne w umowach zakupowych i wiem, jak rozmawiać o nich zarówno z perspektywy dostawcy, jak i producenta.",
+   "Praca radcy prawnego w firmie wiązała się z szacowaniem ryzyka. Staram się nie blokować biznesu, tylko go wspierać w granicach prawa: odpowiadam terminowo i możliwie szybko, a rozwiązania opieram na możliwych i potencjalnych ryzykach, także prawnych.",
   ],
   "about_p2_noemp": "Doświadczenie zdobywałem w działach prawnych firm z branży intralogistyki i wózków widłowych oraz w sieci handlowej, gdzie pracowałem jako prawnik i compliance officer.",
   "highlights": [
    "Negocjacje zakupowe obejmujące m.in. części metalowe, półprzewodniki, opony, systemy kamer, systemy bateryjne i rozwiązania dedykowane",
    "Umowy zakupowe i procurement — z perspektywy dostawcy i producenta",
-   "Relacje dostawca–sieć handlowa, w tym udział w postępowaniach dotyczących rabatów naliczanych retroaktywnie",
+   "Udział w postępowaniach przeciwko sieciom handlowym dotyczących rabatów retrospektywnych",
+   "Wdrażanie niemieckiej ustawy o należytej staranności w łańcuchach dostaw (LkSG) w spółkach",
    "Compliance w sieci handlowej — jako prawnik i compliance officer",
+   "Spółki: zakładanie od podstaw i rejestracje w KRS przez Portal Rejestrów Sądowych (PRS)",
+   "Obsługa korporacyjna: powoływanie i odwoływanie członków zarządu i prokurentów, absolutorium, zatwierdzanie sprawozdań finansowych, dokumenty na walne zgromadzenia",
    "Praca w języku polskim, angielskim i niemieckim",
   ],
   "quals_h": "Uprawnienia zawodowe",
@@ -117,7 +127,7 @@ T = {
    "Szczegóły (izba, numer wpisu) znajdziesz w zakładce <a href=\"{legal}\">Informacje prawne</a>.",
   ],
   "contact_h": "Kontakt",
-  "contact_p": "Opisz krótko sprawę lub zapytaj o współpracę. Odpowiem, czy mogę pomóc i na jakich zasadach.",
+  "contact_p": "Opisz krótko sprawę lub zapytaj o współpracę. Odpowiem, czy mogę pomóc i na jakich zasadach. Współpracuję z firmami zarówno przy pojedynczych sprawach, jak i na stałe.",
   "contact_note": "W pierwszej wiadomości proszę nie przesyłać dokumentów ani informacji objętych tajemnicą. Wiadomość nie tworzy stosunku zlecenia — zasady współpracy ustalamy odrębnie.",
   "lbl_email": "E-mail", "lbl_phone": "Telefon", "lbl_lang": "Języki", "lbl_place": "Miejsce",
   "langs_val": "polski · English · Deutsch",
@@ -130,36 +140,37 @@ T = {
  },
  "en": {
   "html_lang": "en",
-  "title": "Dymczak Legal — Polish Legal Counsel (radca prawny) | Poland–Germany Business",
-  "description": "Grzegorz Dymczak, radca prawny — Polish licensed legal counsel in independent practice. Business negotiations, procurement and supply agreements, compliance, company law and civil law. Services in Polish, English and German.",
+  "title": "Dymczak Legal — Attorney-at-Law (radca prawny) | Poland–Germany Business",
+  "description": "Grzegorz Dymczak, attorney-at-law (radca prawny) admitted in Poland, in independent practice. Business negotiations, procurement and supply agreements, compliance, company law and civil law. Services in Polish, English and German.",
   "skip": "Skip to content",
   "menu": "Menu",
   "nav": [("services", "Areas of practice"), ("approach", "Approach"), ("about", "About"), ("contact", "Contact")],
   "lang_label": "Language",
-  "h1": "Polish legal counsel for businesses operating between Poland and Germany.",
+  "h1": "Polish attorney-at-law for businesses operating between Poland and Germany.",
   "lead": "I run an independent legal practice for businesses. I negotiate and draft commercial agreements and advise on compliance, company law and civil law — in Polish, English and German.",
-  "cred": "<strong>Radca prawny</strong> — a Polish licensed legal counsel, entered on the list of legal counsels and in active practice. Independent practice; advice on Polish law.",
+  "cred": "<strong>Attorney-at-law (radca prawny)</strong> admitted in Poland, entered on the list of attorneys-at-law (radcowie prawni) and in active practice. Independent practice; advice on Polish law.",
   "cta1": "Get in touch", "cta2": "Areas of practice",
-  "cap_name": "Grzegorz Dymczak", "cap_role": "Radca prawny (Polish legal counsel) · independent practice",
-  "photo_alt": "Grzegorz Dymczak, Polish legal counsel, in a navy suit",
+  "cap_name": "Grzegorz Dymczak", "cap_role": "Attorney-at-law (radca prawny) · independent practice",
+  "photo_alt": "Grzegorz Dymczak, attorney-at-law, in a navy suit",
   "services_h": "Areas of practice",
   "services_p": "I advise companies that negotiate, buy, sell and supply — where the contract has to hold up in practice.",
   "services": [
-   ("Commercial negotiations", "Preparing and conducting negotiations with suppliers, customers and partners: strategy, key positions, risk assessment and drafting of the final contract — from the perspective of both supplier and manufacturer."),
+   ("Commercial negotiations", "Preparing and conducting negotiations with suppliers, customers and partners: understanding what the other side really wants, strategy, key positions, risk assessment and drafting of the final contract — from the perspective of both supplier and manufacturer."),
    ("Procurement and supply chain contracts", "General terms of purchase, framework and supply agreements, quality agreements. Liability, warranties, contractual penalties, limitations of liability, intellectual property and continuity of supply."),
-   ("Suppliers and retail chains", "Commercial terms, rebates and bonuses (including those applied retroactively), penalties and set-offs, abuse of contractual advantage in the trade of agricultural and food products, and related disputes."),
-   ("Compliance", "Policies and codes of conduct, internal procedures, training, counterparty due diligence, whistleblowing systems and compliance reviews."),
-   ("Company law", "Incorporation and ongoing support of companies (including Polish limited liability companies), shareholder agreements, resolutions, board–shareholder relations and transaction support."),
+   ("Suppliers and retail chains", "Commercial terms, rebates and bonuses (including those applied retroactively), penalties and set-offs, abuse of contractual advantage in the trade of agricultural and food products, and related disputes, including court proceedings."),
+   ("Compliance and supply chain due diligence", "Policies and codes of conduct, internal procedures, training, counterparty due diligence and whistleblowing systems. Implementation of supply chain due diligence requirements, including the German Supply Chain Due Diligence Act (LkSG) — also for Polish suppliers of German companies."),
+   ("Company law", "Incorporating companies from scratch, including filings with the National Court Register (KRS) through the Court Registers Portal (PRS), and ongoing corporate support: appointing and removing management board members and commercial proxies (prokura), resolutions, discharge of board members (absolutorium), approval of financial statements, documents for general meetings, shareholder agreements and transaction support."),
    ("Civil law and disputes", "Contractual and damages claims, debt recovery, settlement negotiations and representation before courts and authorities in Poland."),
   ],
   "approach_h": "Approach",
-  "approach_p": "Three things that define how I work.",
+  "approach_p": "Four things that define how I work.",
   "pillars": [
    ("Both sides of the table", "I have negotiated and assessed contracts from the perspective of a supplier, a manufacturer and a retail chain. I know which provisions really matter to each party — and where it is worth holding the line."),
    ("Three languages, no interpreter", "Negotiations, correspondence and documentation in Polish, English and German. A contract does not lose its meaning where legal systems and business cultures meet."),
-   ("Risk in practice", "I point out the risks that matter commercially and propose solutions that can actually be achieved at the negotiating table — rather than a list of reservations without a recommendation."),
+   ("Law that supports the business", "I assess legal risks together with business risks and propose solutions that can actually be implemented. I do not block the business — I help it operate within the limits of the law."),
+   ("On time", "I keep deadlines and respond as quickly as I can, because business decisions rarely can wait."),
   ],
-  "band": "A good contract still works when the business relationship stops being simple.",
+  "band": "In a negotiation, first find out what the other side really wants. Only then start negotiating.",
   "band_alt": "Stylised illustration of a city skyline at dusk",
   "industries_h": "Sectors",
   "industries_p": "Markets where negotiation is part of everyday business.",
@@ -168,71 +179,76 @@ T = {
    ("Intralogistics and machinery", "Manufacturers of forklift trucks and warehouse systems: agreements with suppliers, customers and distributors."),
    ("Retail and food products", "Supplier–retailer relations: commercial terms, rebates, bonuses and contractual advantage."),
   ],
-  "about_h": "Grzegorz Dymczak, radca prawny",
+  "about_h": "Grzegorz Dymczak, attorney-at-law (radca prawny)",
   "about_photo_alt": "Grzegorz Dymczak — portrait",
   "about_p": [
-   "I am a radca prawny (Polish legal counsel) running my own practice. Clients work directly with me, without intermediaries, and I am responsible for the matter from start to finish.",
+   "I am an attorney-at-law (radca prawny) admitted in Poland and I run my own practice. Clients work directly with me, without intermediaries, and I am responsible for the matter from start to finish.",
    "I gained my experience in the legal departments of companies in the intralogistics and forklift industry ({employers}) and at the retail chain Kaufland, where I worked as a lawyer and compliance officer.",
    "I have taken part in negotiations with international suppliers in the automotive sector. I know the typical points of contention in procurement contracts and how to address them from the perspective of both supplier and manufacturer.",
+   "In-house legal work meant assessing risk. I try not to block the business but to support it within the limits of the law: I reply on time and as quickly as I can, and I base solutions on possible and potential risks, including legal ones.",
   ],
   "about_p2_noemp": "I gained my experience in the legal departments of companies in the intralogistics and forklift industry and at a retail chain, where I worked as a lawyer and compliance officer.",
   "highlights": [
    "Procurement negotiations covering, among others, metal parts, semiconductors, tyres, camera systems, battery systems and dedicated solutions",
    "Purchase agreements and procurement — from the perspective of supplier and manufacturer",
-   "Supplier–retailer relations, including participation in proceedings on retroactively applied rebates",
+   "Participation in proceedings against retail chains concerning retroactive rebates",
+   "Implementation of the German Supply Chain Due Diligence Act (LkSG) in companies",
    "Compliance in retail — as a lawyer and compliance officer",
+   "Companies: incorporation from scratch and registrations with the National Court Register (KRS) through the Court Registers Portal (PRS)",
+   "Corporate support: appointing and removing board members and commercial proxies (prokura), discharge, approval of financial statements, documents for general meetings",
    "Working language: Polish, English and German",
   ],
   "quals_h": "Professional qualification",
   "quals": [
-   "I am a <strong>radca prawny</strong> — a Polish licensed legal counsel. In Poland this is a regulated profession of public trust, governed by the Act of 6 July 1982 on Legal Counsels (<em>ustawa o radcach prawnych</em>) and the Code of Ethics of Legal Counsels (<em>Kodeks Etyki Radcy Prawnego</em>). I am entered on the list of legal counsels and in active practice.",
-   "A radca prawny is authorised to give legal advice and opinions, prepare contracts and other legal documents, and represent clients before courts and authorities in Poland. Professional secrecy applies. The title was conferred in Poland; it is a Polish professional title and not the German title “Rechtsanwalt”.",
+   "I am an <strong>attorney-at-law (radca prawny)</strong> admitted in Poland. In Poland this is a regulated profession of public trust, governed by the Act of 6 July 1982 on Legal Counsels (<em>ustawa o radcach prawnych</em>) and the Code of Ethics of Legal Counsels (<em>Kodeks Etyki Radcy Prawnego</em>). I am entered on the list of attorneys-at-law (radcowie prawni) and in active practice.",
+   "An attorney-at-law (radca prawny) is authorised to give legal advice and opinions, prepare contracts and other legal documents, and represent clients before courts and authorities in Poland. Professional secrecy applies. The title was conferred in Poland; admission relates to Poland and does not confer admission in other jurisdictions.",
    "Details (chamber, registration number) are on the <a href=\"{legal}\">Legal notice</a> page.",
   ],
   "contact_h": "Contact",
-  "contact_p": "Briefly describe your matter or ask about working together. I will tell you whether I can help and on what terms.",
+  "contact_p": "Briefly describe your matter or ask about working together. I will tell you whether I can help and on what terms. I work with companies both on one-off matters and on an ongoing basis.",
   "contact_note": "Please do not send documents or confidential information in your first message. Contacting me does not create an engagement — the terms of cooperation are agreed separately.",
   "lbl_email": "Email", "lbl_phone": "Phone", "lbl_lang": "Languages", "lbl_place": "Location",
   "langs_val": "Polski · English · Deutsch",
   "mail_subject": "Enquiry — Dymczak Legal",
   "mail_btn": "Send an email",
   "foot_disc": "The content of this website is for general information only and does not constitute legal advice. Contacting me does not create an attorney–client relationship.",
-  "foot_rights": "© {year} Dymczak Legal — Grzegorz Dymczak, radca prawny.",
+  "foot_rights": "© {year} Dymczak Legal — Grzegorz Dymczak, attorney-at-law (radca prawny).",
   "legal_link": "Legal notice and privacy policy",
-  "jsonld_job": "Radca prawny (Polish legal counsel)",
+  "jsonld_job": "Attorney-at-law (radca prawny)",
  },
  "de": {
   "html_lang": "de",
-  "title": "Dymczak Legal — Polnischer Rechtsberater (radca prawny) | Polen–Deutschland",
-  "description": "Grzegorz Dymczak, radca prawny — in Polen zugelassener Rechtsberater in eigener Praxis. Verhandlungen, Einkaufs- und Lieferverträge, Compliance, Gesellschaftsrecht und Zivilrecht. Beratung auf Polnisch, Englisch und Deutsch.",
+  "title": "Dymczak Legal — Rechtsanwalt in Polen (radca prawny) | Polen–Deutschland",
+  "description": "Grzegorz Dymczak, radca prawny — in Polen zugelassener Rechtsanwalt in eigener Praxis. Verhandlungen, Einkaufs- und Lieferverträge, Compliance, Gesellschaftsrecht und Zivilrecht. Beratung auf Polnisch, Englisch und Deutsch.",
   "skip": "Zum Inhalt springen",
   "menu": "Menü",
   "nav": [("services", "Tätigkeitsbereiche"), ("approach", "Arbeitsweise"), ("about", "Über mich"), ("contact", "Kontakt")],
   "lang_label": "Sprache",
-  "h1": "Polnischer Rechtsberater für Unternehmen zwischen Polen und Deutschland.",
+  "h1": "Rechtsanwalt in Polen für Unternehmen zwischen Polen und Deutschland.",
   "lead": "Ich berate Unternehmen in eigener Praxis: Verhandlung und Gestaltung von Handelsverträgen, Compliance, Gesellschaftsrecht und Zivilrecht — auf Polnisch, Englisch und Deutsch.",
-  "cred": "<strong>Radca prawny</strong> — in Polen zugelassener Rechtsberater, in die Liste der radcowie prawni eingetragen und aktiv tätig. Eigene Praxis; Beratung zum polnischen Recht.",
+  "cred": "<strong>Radca prawny</strong> — in Polen zugelassener Rechtsanwalt, in die polnische Liste der radcowie prawni eingetragen und aktiv tätig. Eigene Praxis; Beratung zum polnischen Recht.",
   "cta1": "Kontakt aufnehmen", "cta2": "Tätigkeitsbereiche",
-  "cap_name": "Grzegorz Dymczak", "cap_role": "Radca prawny (polnischer Rechtsberater) · eigene Praxis",
-  "photo_alt": "Grzegorz Dymczak, polnischer Rechtsberater, im dunkelblauen Anzug",
+  "cap_name": "Grzegorz Dymczak", "cap_role": "Rechtsanwalt in Polen (radca prawny) · eigene Praxis",
+  "photo_alt": "Grzegorz Dymczak, Rechtsanwalt in Polen, im dunkelblauen Anzug",
   "services_h": "Tätigkeitsbereiche",
   "services_p": "Ich berate Unternehmen, die verhandeln, einkaufen, verkaufen und liefern — dort, wo der Vertrag in der Praxis bestehen muss.",
   "services": [
-   ("Geschäftsverhandlungen", "Vorbereitung und Führung von Verhandlungen mit Lieferanten, Kunden und Partnern: Strategie, Kernpositionen, Risikobewertung und Ausarbeitung des Vertragstextes — aus der Sicht von Lieferant und Hersteller."),
+   ("Geschäftsverhandlungen", "Vorbereitung und Führung von Verhandlungen mit Lieferanten, Kunden und Partnern: Klärung, was die Gegenseite wirklich will, Strategie, Kernpositionen, Risikobewertung und Ausarbeitung des Vertragstextes — aus der Sicht von Lieferant und Hersteller."),
    ("Einkaufs- und Lieferkettenverträge", "Allgemeine Einkaufsbedingungen, Rahmen- und Liefer­verträge, Qualitätssicherungsvereinbarungen. Haftung, Gewährleistung, Vertragsstrafen, Haftungsbegrenzungen, geistiges Eigentum und Liefersicherheit."),
-   ("Lieferanten und Handelsketten", "Handelskonditionen, Rabatte und Boni (auch rückwirkend angewandte), Vertragsstrafen und Aufrechnungen, Ausnutzung vertraglicher Übermacht im Handel mit landwirtschaftlichen und Lebensmittelerzeugnissen sowie damit verbundene Streitigkeiten."),
-   ("Compliance", "Richtlinien und Verhaltenskodizes, interne Verfahren, Schulungen, Prüfung von Geschäftspartnern, Hinweisgebersysteme und Compliance-Überprüfungen."),
-   ("Gesellschaftsrecht", "Gründung und laufende Betreuung von Gesellschaften (auch der polnischen Sp. z o.o.), Gesellschaftervereinbarungen, Beschlüsse, Verhältnis Geschäftsführung–Gesellschafter und Begleitung von Transaktionen."),
+   ("Lieferanten und Handelsketten", "Handelskonditionen, Rabatte und Boni (auch rückwirkend angewandte), Vertragsstrafen und Aufrechnungen, Ausnutzung vertraglicher Übermacht im Handel mit landwirtschaftlichen und Lebensmittelerzeugnissen sowie damit verbundene Streitigkeiten, auch gerichtliche."),
+   ("Compliance und Lieferkettensorgfalt", "Richtlinien und Verhaltenskodizes, interne Verfahren, Schulungen, Prüfung von Geschäftspartnern und Hinweisgebersysteme. Umsetzung der Sorgfaltspflichten in der Lieferkette, einschließlich des Lieferkettensorgfaltspflichtengesetzes (LkSG) — auch für polnische Zulieferer deutscher Unternehmen."),
+   ("Gesellschaftsrecht", "Gründung von Gesellschaften von Grund auf, einschließlich der Anmeldungen zum polnischen Gerichtsregister (KRS) über das Gerichtsregisterportal (PRS), sowie laufende gesellschaftsrechtliche Betreuung: Bestellung und Abberufung von Vorstands- bzw. Geschäftsführungsmitgliedern und Prokuristen, Beschlüsse, Entlastung, Genehmigung der Jahresabschlüsse, Unterlagen für Gesellschafter- und Hauptversammlungen, Gesellschaftervereinbarungen und Begleitung von Transaktionen."),
    ("Zivilrecht und Streitigkeiten", "Vertragliche Ansprüche und Schadensersatz, Forderungsbeitreibung, Vergleichsverhandlungen und Vertretung vor Gerichten und Behörden in Polen."),
   ],
   "approach_h": "Arbeitsweise",
-  "approach_p": "Drei Dinge, die meine Arbeit prägen.",
+  "approach_p": "Vier Dinge, die meine Arbeit prägen.",
   "pillars": [
    ("Beide Seiten des Tisches", "Ich habe Verträge aus der Perspektive von Lieferant, Hersteller und Handelskette verhandelt und bewertet. Ich weiß, welche Regelungen für jede Seite tatsächlich zählen — und wo es sich lohnt, hart zu bleiben."),
    ("Drei Sprachen, ohne Dolmetscher", "Verhandlungen, Korrespondenz und Dokumentation auf Polnisch, Englisch und Deutsch. Ein Vertrag verliert nichts von seiner Bedeutung, wo Rechtssysteme und Geschäftskulturen aufeinandertreffen."),
-   ("Risiko in der Praxis", "Ich benenne die Risiken, die wirtschaftlich relevant sind, und schlage Lösungen vor, die am Verhandlungstisch durchsetzbar sind — statt einer Liste von Vorbehalten ohne Empfehlung."),
+   ("Recht, das das Geschäft unterstützt", "Ich bewerte rechtliche Risiken gemeinsam mit den wirtschaftlichen und schlage umsetzbare Lösungen vor. Ich blockiere das Geschäft nicht — ich helfe, innerhalb des rechtlichen Rahmens zu handeln."),
+   ("Termintreue", "Ich halte Fristen ein und antworte so schnell wie möglich, denn unternehmerische Entscheidungen können selten warten."),
   ],
-  "band": "Ein guter Vertrag funktioniert auch dann, wenn die Geschäftsbeziehung schwierig wird.",
+  "band": "Wer verhandelt, muss zuerst wissen, was die andere Seite wirklich will. Erst dann beginnt die Verhandlung.",
   "band_alt": "Stilisierte Grafik: Stadtsilhouette in der Dämmerung",
   "industries_h": "Branchen",
   "industries_p": "Märkte, in denen Verhandlungen zum Alltag gehören.",
@@ -241,38 +257,42 @@ T = {
    ("Intralogistik und Maschinenbau", "Hersteller von Gabelstaplern und Lagersystemen: Verträge mit Lieferanten, Kunden und Händlern."),
    ("Handel und Lebensmittel", "Beziehungen zwischen Lieferant und Handelskette: Handelskonditionen, Rabatte, Boni und vertragliche Übermacht."),
   ],
-  "about_h": "Grzegorz Dymczak, radca prawny",
+  "about_h": "Grzegorz Dymczak, Rechtsanwalt in Polen (radca prawny)",
   "about_photo_alt": "Grzegorz Dymczak — Porträt",
   "about_p": [
-   "Ich bin radca prawny (polnischer Rechtsberater) und führe eine eigene Praxis. Mandanten arbeiten direkt mit mir, ohne Zwischenstationen, und ich verantworte das Mandat von Anfang bis Ende.",
+   "Ich bin in Polen zugelassener Rechtsanwalt (radca prawny) und führe eine eigene Praxis. Mandanten arbeiten direkt mit mir, ohne Zwischenstationen, und ich verantworte das Mandat von Anfang bis Ende.",
    "Meine Erfahrung habe ich in den Rechtsabteilungen von Unternehmen der Intralogistik- und Gabelstaplerbranche ({employers}) sowie bei der Handelskette Kaufland gesammelt, wo ich als Jurist und Compliance Officer tätig war.",
    "Ich habe an Verhandlungen mit internationalen Lieferanten der Automobilbranche teilgenommen. Ich kenne die typischen Streitpunkte in Einkaufsverträgen und weiß, wie man sie aus der Sicht von Lieferant und Hersteller anspricht.",
+   "Die Tätigkeit als Unternehmensjurist war mit der Bewertung von Risiken verbunden. Ich blockiere das Geschäft nicht, sondern unterstütze es im rechtlichen Rahmen: Ich antworte termingerecht und so schnell wie möglich und bewerte Lösungen anhand möglicher und potenzieller Risiken, auch rechtlicher.",
   ],
   "about_p2_noemp": "Meine Erfahrung habe ich in den Rechtsabteilungen von Unternehmen der Intralogistik- und Gabelstaplerbranche sowie bei einer Handelskette gesammelt, wo ich als Jurist und Compliance Officer tätig war.",
   "highlights": [
    "Einkaufsverhandlungen u. a. zu Metallteilen, Halbleitern, Reifen, Kamerasystemen, Batteriesystemen und kundenspezifischen Lösungen",
    "Einkaufsverträge und Procurement — aus der Sicht von Lieferant und Hersteller",
-   "Beziehungen zwischen Lieferant und Handelskette, einschließlich Verfahren zu rückwirkend angewandten Rabatten",
+   "Teilnahme an Verfahren gegen Handelsketten zu rückwirkend angewandten Rabatten",
+   "Umsetzung des Lieferkettensorgfaltspflichtengesetzes (LkSG) in Unternehmen",
    "Compliance im Handel — als Jurist und Compliance Officer",
+   "Gesellschaften: Gründung von Grund auf und Anmeldungen zum polnischen Gerichtsregister (KRS) über das Gerichtsregisterportal (PRS)",
+   "Gesellschaftsrechtliche Betreuung: Bestellung und Abberufung von Vorstands-/Geschäftsführungsmitgliedern und Prokuristen, Entlastung, Genehmigung der Jahresabschlüsse, Unterlagen für Hauptversammlungen",
    "Arbeitssprachen: Polnisch, Englisch und Deutsch",
   ],
   "quals_h": "Berufliche Qualifikation",
   "quals": [
-   "Ich bin <strong>radca prawny</strong> — ein in Polen zugelassener Rechtsberater. In Polen ist dies ein gesetzlich geregelter Beruf des öffentlichen Vertrauens (Gesetz vom 6. Juli 1982 über die radcowie prawni, <em>ustawa o radcach prawnych</em>, und Standesregeln <em>Kodeks Etyki Radcy Prawnego</em>). Ich bin in die Liste der radcowie prawni eingetragen und übe den Beruf aktiv aus.",
-   "Ein radca prawny ist befugt, Rechtsrat und Gutachten zu erteilen, Verträge und andere Rechtsdokumente zu erstellen und Mandanten vor Gerichten und Behörden in Polen zu vertreten. Es gilt die berufliche Verschwiegenheitspflicht. Die Berufsbezeichnung wurde in Polen verliehen; sie entspricht nicht der deutschen Bezeichnung „Rechtsanwalt“.",
+   "Ich bin <strong>radca prawny</strong> — in Polen zugelassener Rechtsanwalt. In Polen ist dies ein gesetzlich geregelter Beruf des öffentlichen Vertrauens (Gesetz vom 6. Juli 1982 über die radcowie prawni, <em>ustawa o radcach prawnych</em>, und Standesregeln <em>Kodeks Etyki Radcy Prawnego</em>). Ich bin in die Liste der radcowie prawni eingetragen und übe den Beruf aktiv aus.",
+   "Ein radca prawny ist befugt, Rechtsrat und Gutachten zu erteilen, Verträge und andere Rechtsdokumente zu erstellen und Mandanten vor Gerichten und Behörden in Polen zu vertreten. Es gilt die berufliche Verschwiegenheitspflicht. Die Berufsbezeichnung des Herkunftsstaates lautet „radca prawny“; die Zulassung besteht in Polen und begründet keine Zulassung zur Rechtsanwaltschaft in Deutschland.",
    "Einzelheiten (Kammer, Eintragungsnummer) finden Sie im <a href=\"{legal}\">Impressum</a>.",
   ],
   "contact_h": "Kontakt",
-  "contact_p": "Schildern Sie Ihr Anliegen kurz oder fragen Sie nach einer Zusammenarbeit. Ich melde mich, ob und zu welchen Bedingungen ich helfen kann.",
+  "contact_p": "Schildern Sie Ihr Anliegen kurz oder fragen Sie nach einer Zusammenarbeit. Ich melde mich, ob und zu welchen Bedingungen ich helfen kann. Ich arbeite für Unternehmen sowohl bei einzelnen Mandaten als auch dauerhaft.",
   "contact_note": "Bitte senden Sie in der ersten Nachricht keine Dokumente oder vertraulichen Informationen. Die Kontaktaufnahme begründet kein Mandatsverhältnis — die Bedingungen der Zusammenarbeit werden gesondert vereinbart.",
   "lbl_email": "E-Mail", "lbl_phone": "Telefon", "lbl_lang": "Sprachen", "lbl_place": "Standort",
   "langs_val": "Polski · English · Deutsch",
   "mail_subject": "Anfrage — Dymczak Legal",
   "mail_btn": "E-Mail schreiben",
   "foot_disc": "Die Inhalte dieser Website dienen der allgemeinen Information und stellen keine Rechtsberatung dar. Die Kontaktaufnahme begründet kein Mandatsverhältnis.",
-  "foot_rights": "© {year} Dymczak Legal — Grzegorz Dymczak, radca prawny.",
+  "foot_rights": "© {year} Dymczak Legal — Grzegorz Dymczak, Rechtsanwalt in Polen (radca prawny).",
   "legal_link": "Impressum und Datenschutzerklärung",
-  "jsonld_job": "Radca prawny (polnischer Rechtsberater)",
+  "jsonld_job": "Rechtsanwalt in Polen (radca prawny)",
  },
 }
 
@@ -349,14 +369,14 @@ def legal_html(lang):
 </dl>
 <h2>2. Professional information</h2>
 <dl>
- <dt>Professional title</dt><dd>radca prawny (Polish legal counsel)</dd>
+ <dt>Professional title</dt><dd>attorney-at-law (radca prawny)</dd>
  <dt>Country where the title was conferred</dt><dd>Republic of Poland</dd>
- <dt>Professional body</dt><dd>National Chamber of Legal Counsels (Krajowa Izba Radców Prawnych); entered on the list of legal counsels kept by the Regional Chamber of Legal Counsels (Okręgowa Izba Radców Prawnych) in {td(c['chamber'], 'izba (chamber)')}</dd>
+ <dt>Professional body</dt><dd>National Chamber of Legal Counsels (Krajowa Izba Radców Prawnych); entered on the list of attorneys-at-law (radcowie prawni) kept by the Regional Chamber of Legal Counsels (Okręgowa Izba Radców Prawnych) in {td(c['chamber'], 'izba (chamber)')}</dd>
  <dt>Registration number</dt><dd>{td(c['entry_no'], 'numer wpisu (entry_no)')}</dd>
  <dt>Professional rules</dt><dd>Act of 6 July 1982 on Legal Counsels (<em>ustawa o radcach prawnych</em>); Code of Ethics of Legal Counsels (<em>Kodeks Etyki Radcy Prawnego</em>), available e.g. via <a href="https://kirp.pl" rel="noopener">kirp.pl</a></dd>
  <dt>Professional liability insurance</dt><dd>Compulsory professional liability insurance for legal counsels under the framework agreement concluded by the National Chamber of Legal Counsels with UNIQA Towarzystwo Ubezpieczeń S.A., ul. Chłodna 51, 00-867 Warsaw, Poland (information: <a href="{c['insurance_url']}" rel="noopener">oirp.wroclaw.pl</a>)</dd>
 </dl>
-<p>“Radca prawny” is a Polish professional title. It is not the German title “Rechtsanwalt”. Advice relates to Polish law.</p>
+<p>The Polish professional title is “radca prawny”; “attorney-at-law” is its common English equivalent. Admission relates to Poland and does not confer admission in other jurisdictions. Advice relates to Polish law.</p>
 <h2>3. Nature of the content</h2>
 <p>The content of this website is for general information only. It does not constitute legal advice or a binding offer. Contacting me through this website or by email does not create an attorney–client relationship. Please do not send documents or confidential information in your first message; the terms of cooperation are agreed separately.</p>
 <h2>4. Privacy policy</h2>
@@ -397,14 +417,14 @@ def legal_html(lang):
 </dl>
 <h2>2. Berufsrechtliche Angaben</h2>
 <dl>
- <dt>Berufsbezeichnung</dt><dd>radca prawny (polnischer Rechtsberater)</dd>
+ <dt>Berufsbezeichnung</dt><dd>radca prawny (Rechtsanwalt in Polen)</dd>
  <dt>Staat der Verleihung</dt><dd>Republik Polen</dd>
  <dt>Zuständige Berufsorganisation</dt><dd>Nationale Kammer der radcowie prawni (Krajowa Izba Radców Prawnych); eingetragen in die Liste der radcowie prawni der Regionalkammer (Okręgowa Izba Radców Prawnych) in {td(c['chamber'], 'izba (chamber)')}</dd>
  <dt>Eintragungsnummer</dt><dd>{td(c['entry_no'], 'numer wpisu (entry_no)')}</dd>
  <dt>Berufsrechtliche Regelungen</dt><dd>Gesetz vom 6. Juli 1982 über die radcowie prawni (<em>ustawa o radcach prawnych</em>); Standesregeln der radcowie prawni (<em>Kodeks Etyki Radcy Prawnego</em>), abrufbar z. B. über <a href="https://kirp.pl" rel="noopener">kirp.pl</a></dd>
  <dt>Berufshaftpflichtversicherung</dt><dd>Pflicht-Berufshaftpflichtversicherung der radcowie prawni im Rahmen des Rahmenvertrags der Nationalen Kammer der radcowie prawni mit UNIQA Towarzystwo Ubezpieczeń S.A., ul. Chłodna 51, 00-867 Warschau, Polen (Informationen: <a href="{c['insurance_url']}" rel="noopener">oirp.wroclaw.pl</a>). Räumlicher Geltungsbereich: {td(c['insurance_scope_de'], 'Geltungsbereich Versicherung DE (insurance_scope_de)')}</dd>
 </dl>
-<p>„Radca prawny“ ist eine polnische Berufsbezeichnung. Sie entspricht nicht der deutschen Bezeichnung „Rechtsanwalt“. Die Beratung bezieht sich auf polnisches Recht.</p>
+<p>Die Berufsbezeichnung des Herkunftsstaates lautet „radca prawny“. Die Zulassung besteht in Polen; eine Zulassung zur Rechtsanwaltschaft in Deutschland besteht nicht. Die Beratung bezieht sich auf polnisches Recht.</p>
 <h2>3. Art der Inhalte</h2>
 <p>Die Inhalte dieser Website dienen der allgemeinen Information. Sie stellen keine Rechtsberatung und kein verbindliches Angebot dar. Die Kontaktaufnahme über die Website oder per E-Mail begründet kein Mandatsverhältnis. Bitte senden Sie in der ersten Nachricht keine Dokumente oder vertraulichen Informationen; die Bedingungen der Zusammenarbeit werden gesondert vereinbart.</p>
 <h2>4. Datenschutzerklärung</h2>
@@ -484,7 +504,7 @@ def header(lang, page):
  <div class="wrap header-inner">
   <a class="brand" href="{home}" aria-label="Dymczak Legal">
    <span class="brand__name">Dymczak <span>Legal</span></span>
-   <span class="brand__sub">{e(SIGNATURE)}</span>
+   <span class="brand__sub">{e(SIG[lang])}</span>
   </a>
   <button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav">{e(t['menu'])}</button>
   <nav class="nav" id="site-nav" aria-label="Menu">
@@ -506,7 +526,7 @@ def footer(lang, page):
  <div class="wrap footer-grid">
   <div>
    <p class="footer-brand">Dymczak Legal</p>
-   <p>{e(SIGNATURE)}</p>
+   <p>{e(SIG[lang])}</p>
    <p>{e(t['foot_disc'])}</p>
    <p>{e(t['foot_rights'].format(year=YEAR))}</p>
   </div>
@@ -568,7 +588,7 @@ def home(lang):
 <section class="hero">
  <div class="wrap hero__grid">
   <div>
-   <p class="eyebrow">{e(SIGNATURE)}</p>
+   <p class="eyebrow">{e(SIG[lang])}</p>
    <h1>{e(t['h1'])}</h1>
    <p class="hero__lead">{e(t['lead'])}</p>
    <p class="hero__cred">{t['cred']}</p>
@@ -614,7 +634,7 @@ def home(lang):
  <div class="wrap about">
   <figure class="about__photo"><img src="../assets/img/portrait-shirt.webp" width="800" height="1200" alt="{e(t['about_photo_alt'])}" loading="lazy"></figure>
   <div>
-   <p class="eyebrow eyebrow--dark">{e(SIGNATURE)}</p>
+   <p class="eyebrow eyebrow--dark">{e(SIG[lang])}</p>
    <h2>{e(t['about_h'])}</h2>
    {paras}
    <ul class="highlights">{hl}</ul>
@@ -669,8 +689,8 @@ ROOT_PAGE = f"""<!doctype html>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Dymczak Legal — Polish Legal Counsel | Poland–Germany Business</title>
-<meta name="description" content="Dymczak Legal — radca prawny / Polish legal counsel / polnischer Rechtsberater. PL · EN · DE.">
+<title>Dymczak Legal — Attorney-at-Law (radca prawny) | Poland–Germany Business</title>
+<meta name="description" content="Dymczak Legal — radca prawny / attorney-at-law / Rechtsanwalt in Polen. PL · EN · DE.">
 <link rel="canonical" href="{BASE}/">
 <link rel="alternate" hreflang="pl" href="{BASE}/pl/">
 <link rel="alternate" hreflang="en" href="{BASE}/en/">
