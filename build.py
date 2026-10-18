@@ -301,6 +301,24 @@ T = {
 
 EMPLOYERS = "Linde, STILL, Baoli, Dematic, Fenwick"
 
+EDU = {
+ "pl": ("Wykształcenie", [
+   ("Szkoła Prawa Niemieckiego (SPN) — Uniwersytet Jagielloński", "Ukończona. Zajęcia w języku niemieckim z różnych gałęzi prawa niemieckiego prowadzili profesorowie z Ruprecht-Karls-Universität Heidelberg i Johannes Gutenberg-Universität Mainz."),
+   ("Szkoła Prawa Austriackiego — Uniwersytet Jagielloński", "Ukończona. Zajęcia w języku niemieckim z różnych gałęzi prawa austriackiego prowadzili profesorowie z Uniwersytetu Wiedeńskiego."),
+   ("Studia w Niemczech — Universität Konstanz", "Studia na Uniwersytecie w Konstancji nad Jeziorem Bodeńskim."),
+ ]),
+ "en": ("Education", [
+   ("German Law School (Szkoła Prawa Niemieckiego, SPN) — Jagiellonian University", "Completed. Classes in German on various branches of German law, taught by professors from Ruprecht-Karls-Universität Heidelberg and Johannes Gutenberg-Universität Mainz."),
+   ("Austrian Law School (Szkoła Prawa Austriackiego) — Jagiellonian University", "Completed. Classes in German on various branches of Austrian law, taught by professors from the University of Vienna."),
+   ("Studies in Germany — Universität Konstanz", "Studied at the University of Konstanz on Lake Constance."),
+ ]),
+ "de": ("Ausbildung", [
+   ("Schule des deutschen Rechts (Szkoła Prawa Niemieckiego, SPN) — Jagiellonen-Universität Krakau", "Abgeschlossen. Unterricht auf Deutsch zu verschiedenen Gebieten des deutschen Rechts durch Professoren der Ruprecht-Karls-Universität Heidelberg und der Johannes Gutenberg-Universität Mainz."),
+   ("Schule des österreichischen Rechts (Szkoła Prawa Austriackiego) — Jagiellonen-Universität Krakau", "Abgeschlossen. Unterricht auf Deutsch zu verschiedenen Gebieten des österreichischen Rechts durch Professoren der Universität Wien."),
+   ("Studium in Deutschland — Universität Konstanz", "Studium an der Universität Konstanz am Bodensee."),
+ ]),
+}
+
 
 # ----------------------------------------------------------------------------
 # TEXTS — LEGAL PAGES
@@ -566,6 +584,7 @@ def home(lang):
     )
     pillars = "".join(f'<div class="pillar"><h3>{e(h)}</h3><p>{e(p)}</p></div>' for h, p in t["pillars"])
     inds = "".join(f'<div class="industry"><h3>{e(h)}</h3><p>{e(p)}</p></div>' for h, p in t["industries"])
+    edu = "".join(f"<li><strong>{e(h)}</strong><span>{e(d)}</span></li>" for h, d in EDU[lang][1])
     hl = "".join(f"<li>{e(x)}</li>" for x in t["highlights"])
     quals = "".join(f"<p>{x.format(legal=legal)}</p>" for x in t["quals"])
     paras = "".join(f"<p>{e(p)}</p>" for p in about_p)
@@ -581,7 +600,8 @@ def home(lang):
         "description": t["description"],
         "knowsLanguage": ["pl", "en", "de"],
         "areaServed": ["PL", "DE"],
-        "founder": {"@type": "Person", "name": "Grzegorz Dymczak", "jobTitle": t["jsonld_job"], "knowsLanguage": ["pl", "en", "de"]},
+        "founder": {"@type": "Person", "name": "Grzegorz Dymczak", "jobTitle": t["jsonld_job"], "knowsLanguage": ["pl", "en", "de"],
+                    "alumniOf": [{"@type": "CollegeOrUniversity", "name": "Jagiellonian University"}, {"@type": "CollegeOrUniversity", "name": "University of Konstanz"}]},
         "image": f"{BASE}/assets/img/og.jpg",
     }
 
@@ -644,6 +664,7 @@ def home(lang):
    <h2>{e(t['about_h'])}</h2>
    {paras}
    <ul class="highlights">{hl}</ul>
+   <div class="edu"><h3>{e(EDU[lang][0])}</h3><ul>{edu}</ul></div>
    <div class="quals"><h3>{e(t['quals_h'])}</h3>{quals}</div>
   </div>
  </div>
